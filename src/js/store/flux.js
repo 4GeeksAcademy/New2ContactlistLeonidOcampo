@@ -1,18 +1,13 @@
+import rigoImage from "../../img/rigo-baby.jpg";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			contacts:[
+				{name:"leo", address:"Calle numio", email: "leoocampo@gmail.com", phone:"+57256321", img:rigoImage},
+				{name:"leo", address:"Calle numio", email: "leoocampo@gmail.com", phone:"+57256321", img:rigoImage}
+				
+			],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction

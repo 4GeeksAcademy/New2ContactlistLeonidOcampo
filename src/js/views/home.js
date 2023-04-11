@@ -1,47 +1,38 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import {Context} from "../store/appContext"
 
 import { ContactCard } from "../component/ContactCard";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Contact List</h1>
-		<div className="list-group contact-list">
+export const Home = () => {
+
+	const {store,actions}=useContext(Context)
+	const {contacts}=store
+
+	return (
+	 <div className="text-center mt-5">
+	   <div className="container">
+		 <h1>Contact List</h1>
+		  <div className="list-group contact-list">
+			{contacts.map((contact, index)=>
 			<ContactCard
-			  name={"leo"}
-			  address={"calle numio"}
-			  email={"leo@office.com"}
-			  phone={"+579856321"}
+			  name={contact.name}
+			  address={contact.address}
+			  email={contact.email}
+			  phone={contact.phone}
 			  img={rigoImage}
+			  key={index}
 			/>
-		</div>
-
-		<div className="list-group contact-list">
-			<ContactCard
-			  name={"Sumerce"}
-			  address={"calle numio"}
-			  email={"sumerce@office.com"}
-			  phone={"+5745623125"}
-			  img={rigoImage}
-			/>
-		</div>
-
-		<div className="list-group contact-list">
-			<ContactCard
-			  name={"parce"}
-			  address={"calle rigomontoya"}
-			  email={"parce@office.com"}
-			  phone={"+574523652"}
-			  img={rigoImage}
-			/>
-		</div>
+		   )}
+		  </div>
 
 
-
-		
-		<a href="#" className="btn btn-success">
+		  <a href="#" className="btn btn-success">
 			If you see this green button, bootstrap is working
-		</a>
+		  </a>
+	   </div>	
 	</div>
-);
+	)
+
+};
