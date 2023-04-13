@@ -68,7 +68,7 @@ export const ContactCard = props => {
 /**
  * Define the default values for
  * your component's properties
- **/
+ 
 ContactCard.defaultProps = {
 	onDelete: null
-};
+};**/
